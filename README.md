@@ -14,6 +14,10 @@ The name comes from Argos, the hundred-eyed giant of Greek mythology, who never 
 
 ![The stream picker: live follows, with slots 1 to 4 already taken](docs/screenshots/choose-streams.jpg)
 
+**Browse a game.** Search for a game or a topic to see every channel streaming it live, from the most watched to the least, in your language or in all of them.
+
+![The Minecraft page: hundreds of live streams in a grid, with a language filter](docs/screenshots/game.jpg)
+
 **Spotlight a stream.** Right-click a stream to make it big, the others stack up next to it. The controls (pause, volume, quality) only show up when the mouse moves over the stream.
 
 ![One big stream on the left with its control bar, three small ones stacked on the right](docs/screenshots/spotlight.jpg)
