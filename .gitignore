@@ -1,0 +1,4 @@
+node_modules/
+dist/
+config/twitch.json
+build/icon.png

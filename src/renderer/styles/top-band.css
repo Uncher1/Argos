@@ -1,0 +1,72 @@
+/* Only rendered while visible: a draggable region would otherwise swallow the
+   clicks at the top of the streams. */
+.topband {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 36px;
+  z-index: 60;
+  display: none;
+}
+
+.topband.visible {
+  display: block;
+}
+
+.topband-drag {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+  -webkit-app-region: drag;
+}
+
+.topband-tab {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 6px 16px 7px;
+  border: 0;
+  border-radius: 0 0 9px 9px;
+  background: rgba(145, 71, 255, 0.92);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.topband-tab:hover {
+  background: #a970ff;
+}
+
+.win-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.win-btn {
+  width: 46px;
+  height: 32px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.35);
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.win-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.win-btn.win-close:hover {
+  background: #e81123;
+  color: #fff;
+}

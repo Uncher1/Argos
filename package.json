@@ -1,0 +1,52 @@
+{
+  "name": "argos",
+  "productName": "Argos",
+  "version": "1.1.0",
+  "description": "Watch up to 4 live Twitch streams on a single screen.",
+  "author": "Mahad MOUMINE",
+  "license": "MIT",
+  "repository": "github:Uncher1/Argos",
+  "private": true,
+  "type": "module",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test \"test/**/*.test.js\"",
+    "dev": "node scripts/dev-server.mjs",
+    "postinstall": "install-electron",
+    "icon": "electron scripts/make-icon.cjs",
+    "dist": "npm run icon && electron-builder --win",
+    "demo": "electron . --demo"
+  },
+  "devDependencies": {
+    "electron": "45.1.0",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.mahad.argos",
+    "productName": "Argos",
+    "extraMetadata": {
+      "name": "Argos"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "config/twitch.json",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "createDesktopShortcut": "always",
+      "shortcutName": "Argos",
+      "artifactName": "Argos-Setup-${version}.exe"
+    }
+  }
+}

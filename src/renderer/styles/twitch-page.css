@@ -1,0 +1,84 @@
+.tp-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.tp-panel {
+  width: min(1100px, 92vw);
+  height: min(760px, 88vh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #0e0e10;
+  border: 1px solid #2f2f35;
+  border-radius: 12px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+.tp-head {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 52px 0 14px;
+  background: #18181b;
+  border-bottom: 1px solid #26262b;
+}
+
+.tp-app {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tp-title {
+  margin-left: 8px;
+  font-size: 13px;
+  color: #9a9aa2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tp-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #a0a0aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tp-close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+.tp-slot {
+  flex: 1;
+}
+
+[data-mock] .tp-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #55555d;
+}
+
+[data-mock] .tp-slot::after {
+  content: "Twitch page (simulated)";
+}

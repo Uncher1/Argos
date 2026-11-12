@@ -1,0 +1,167 @@
+#stage {
+  background: #000;
+}
+
+.stream {
+  position: absolute;
+  overflow: hidden;
+  background: #000;
+}
+
+.stream-player,
+.stream-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.stream-offline,
+.stream-paused {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #0e0e10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8a8a93;
+  font-size: 14px;
+}
+
+.stream-paused {
+  background: rgba(14, 14, 16, 0.94);
+}
+
+.stream-offline-name,
+.stream-paused-name {
+  color: #eee;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.stream-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.stream.passthrough .stream-overlay {
+  pointer-events: none;
+}
+
+.stream-hint {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.78);
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.stream-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  height: 52px;
+  padding: 8px 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.stream.show-controls .stream-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stream.dragging .stream-controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stream-controls button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.stream-controls button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.ctl-volume {
+  width: 96px;
+  accent-color: #9147ff;
+  cursor: pointer;
+}
+
+.ctl-spacer {
+  flex: 1;
+}
+
+.ctl-quality {
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ctl-quality option {
+  background: #1f1f23;
+}
+
+.stage-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #77777f;
+  font-size: 14px;
+}
+
+.stage-empty p {
+  margin: 0;
+}
+
+.stage-empty button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background: #9147ff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.stage-empty button:hover {
+  background: #a970ff;
+}

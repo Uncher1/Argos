@@ -1,0 +1,325 @@
+/* The login screens are small windows of their own: the content fills the window. */
+.login {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #18181b;
+  box-shadow: inset 0 0 0 1px #2f2f35;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.login-card {
+  position: relative;
+  width: 440px;
+  padding: 44px 34px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.drag-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  -webkit-app-region: drag;
+}
+
+.login-quit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: #cfcfd6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  -webkit-app-region: no-drag;
+}
+
+.band-visible .login-quit {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.login-quit:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+.login-card h1 {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.login-card h1 span {
+  color: #b98cff;
+}
+
+.login-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #a0a0aa;
+}
+
+.login-btn {
+  margin-top: 6px;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 22px;
+  background: #9147ff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #a970ff;
+}
+
+.login-card .login-error {
+  color: #ff8080;
+  font-size: 13px;
+}
+
+.auth-panel {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #18181b;
+  box-shadow: inset 0 0 0 1px #2f2f35;
+}
+
+.auth-head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 6px 0 14px;
+  background: #121215;
+  border-bottom: 1px solid #26262b;
+  -webkit-app-region: drag;
+}
+
+.auth-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.auth-close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #8a8a93;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.auth-close:hover {
+  background: #2a2a30;
+  color: #fff;
+}
+
+.auth-consent,
+.auth-google {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px 14px;
+  background: linear-gradient(180deg, #1d1530, #18181b);
+  border-bottom: 1px solid #26262b;
+  text-align: center;
+}
+
+.auth-consent b,
+.auth-google b {
+  font-size: 16px;
+  color: #fff;
+}
+
+.auth-consent p,
+.auth-google p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9a9aa2;
+}
+
+.auth-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.auth-dots {
+  width: 48px;
+  border-top: 2px dotted #6a6a75;
+  position: relative;
+}
+
+.auth-dots i {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #34c759;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-account {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9147ff, #ff6bd6);
+}
+
+.auth-slot {
+  flex: 1;
+  margin: 0 1px 1px;
+  background: #18181b;
+}
+
+[data-mock] .auth-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #55555d;
+  font-size: 13px;
+}
+
+[data-mock] .auth-slot::after {
+  content: "Twitch page (simulated)";
+}
+
+.auth-google {
+  background: linear-gradient(180deg, #2a1a1f, #18181b);
+}
+
+.auth-google b {
+  font-size: 14.5px;
+}
+
+/* Language choice: a card of its own at first launch, a dialog later. */
+.lang-card {
+  position: relative;
+  width: 440px;
+  padding: 40px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  background: #18181b;
+}
+
+.lang-title {
+  margin: 2px 0 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.lang-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.lang-btn {
+  border: 1px solid #2f2f35;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #1f1f23;
+  color: #e6e6ea;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+  border-color: #6a6a75;
+  background: #26262c;
+  outline: none;
+}
+
+.lang-btn.on {
+  border-color: #9147ff;
+  background: #2a1f3f;
+  color: #fff;
+}
+
+.lang-card .lang-hint {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #8a8a93;
+}
+
+.lang-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lang-backdrop .lang-card {
+  border: 1px solid #9147ff;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+}
+
+.login-card .login-lang {
+  border: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: transparent;
+  color: #8a8a93;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.login-card .login-lang:hover {
+  background: #26262c;
+  color: #fff;
+}
